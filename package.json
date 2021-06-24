@@ -1,0 +1,24 @@
+{
+  "name": "Clima-Geolocation-Nodejs",
+  "version": "1.0.0",
+  "description": "Aplicación de consola para obtener el clima de distintas ciudades con Nodejs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agustinrios/Clima-Geolocation-Nodejs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agustinrios/Clima-Geolocation-Nodejs/issues"
+  },
+  "homepage": "https://github.com/agustinrios/Clima-Geolocation-Nodejs#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "inquirer": "^8.1.1"
+  }
+}

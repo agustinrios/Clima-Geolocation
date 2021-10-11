@@ -10,7 +10,7 @@ class Busquedas{
 
     get paramsMapbox() {
         return{
-            'access_token': 'pk.eyJ1IjoiYWd1c3RpbnJpb3MiLCJhIjoiY2t1bHJxaGE4MjJneDJydDRzeWN6eGMwbSJ9.26Z3XSeYqEf0XiHZ_FW0MQ',
+            'access_token': process.env.MAPBOX_KEY,
             'limit': 5,
             'language': 'es'
         }
@@ -27,9 +27,12 @@ class Busquedas{
 
             //const resp = await axios.get('https://api.mapbox.com/geocoding/v5/mapbox.places/madrid.json?access_token=pk.eyJ1IjoiYWd1c3RpbnJpb3MiLCJhIjoiY2t1bHJxaGE4MjJneDJydDRzeWN6eGMwbSJ9.26Z3XSeYqEf0XiHZ_FW0MQ&limit=5&language=es');
             const resp = await intance.get();
-            console.log(resp.data);
-
-            return[]
+            return resp.data.features.map( lugar => ({
+                id: lugar.id,
+                nombre: lugar.place_name,
+                lng: lugar.center[0],
+                lat: lugar.center[1]
+            }));
 
         } catch {
             return[];
